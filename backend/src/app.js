@@ -1,16 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const routes = require('./routes');
-const errorHandler = require('./middlewares/error.middleware');
+import express from 'express';
+import routes from './routes.js'; // note .js extension
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
-
 app.use('/api', routes);
 
-// Global error handler (must be last)
-app.use(errorHandler);
-
-module.exports = app;
+export default app;  // <-- THIS is the default export
