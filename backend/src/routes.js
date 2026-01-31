@@ -2,7 +2,11 @@ import express from 'express';
 import sequelize from './config/db.js';
 import redis from './config/redis.js';
 
+import userRoutes from './modules/auth/user.routes.js';
+
 const router = express.Router();
+
+router.use('/users', userRoutes);
 
 router.get('/health', async (req, res) => {
   try {
