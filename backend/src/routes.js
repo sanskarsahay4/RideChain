@@ -3,10 +3,12 @@ import sequelize from './config/db.js';
 import redis from './config/redis.js';
 
 import userRoutes from './modules/auth/user.routes.js';
+import partnerRoutes from './modules/partners/partner.routes.js';
 
 const router = express.Router();
 
 router.use('/users', userRoutes);
+router.use('/partners', partnerRoutes);
 
 router.get('/health', async (req, res) => {
   try {
