@@ -21,6 +21,10 @@ const User = sequelize.define('User', {
     unique: true,
     allowNull: true,
   },
+  fcm_token: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
   created_at: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,

@@ -32,6 +32,18 @@ const Driver = sequelize.define('Driver', {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
   },
+  current_lat: {
+    type: DataTypes.DECIMAL(10, 8),
+    allowNull: true,
+  },
+  current_lng: {
+    type: DataTypes.DECIMAL(11, 8),
+    allowNull: true,
+  },
+  last_active: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
   total_earnings: {
     type: DataTypes.DECIMAL(10, 2),
     defaultValue: 0,
